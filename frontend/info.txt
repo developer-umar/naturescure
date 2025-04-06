@@ -1,0 +1,22 @@
+virtual-garden/
+│── frontend/
+│   │── public/
+│   │   ├── assets/ (Images, icons)
+│   │   ├── index.html
+│   │── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx        ➝ Navigation bar
+│   │   │   ├── Footer.jsx        ➝ Footer of site
+│   │   │   ├── PlantCard.jsx     ➝ Shows plant image & name
+│   │   │   ├── SearchBar.jsx     ➝ Search functionality
+│   │   ├── pages/
+│   │   │   ├── Home.jsx          ➝ Displays all plant cards
+│   │   │   ├── PlantDetails.jsx  ➝ Shows full details of plant + 3D model
+│   │   │   ├── Categories.jsx    ➝ List of Ayurveda, Unani, etc.
+│   │   │   ├── About.jsx         ➝ About the project
+│   │   ├── styles/
+│   │   │   ├── index.css         ➝ Main styles
+│   │   ├── App.jsx               ➝ Main file for routing
+│   │   ├── main.jsx              ➝ Entry point
+│   │── package.json
+│   │── tailwind.config.js
