@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import PaymentMethod from './paymentMethod';
+import PaymentMethod from "./Paymentmethod"; // Import Payment Modal
 const CheckoutModal = ({ isOpen, onClose, cartItems, totalPrice, userId }) => {
   if (!isOpen) return null;
 
