@@ -25,6 +25,15 @@ const TrackOrder = () => {
     }
   };
 
+  const isStepCompleted = (step) => {
+    const status = order?.orderStatus?.toLowerCase();
+    return (
+      step === "Placed" ||
+      (step === "Shipped" && (status === "shipped" || status === "delivered")) ||
+      (step === "Delivered" && status === "delivered")
+    );
+  };
+
   return (
     <div className="max-w-lg mx-auto my-10 p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-semibold text-gray-800 text-center mb-4">Track Your Order</h2>
@@ -60,9 +69,41 @@ const TrackOrder = () => {
           <p><strong>Payment Status:</strong> {order.paymentStatus}</p>
           <p><strong>Total Amount:</strong> ₹{order.totalAmount}</p>
 
-          <h4 className="mt-4 font-semibold">Items:</h4>
+          {/* Stepper UI */}
+          <div className="mt-6">
+            <h4 className="font-semibold mb-3">Order Progress</h4>
+            <div className="flex items-center justify-between">
+              {["Placed", "Shipped", "Delivered"].map((step, index) => {
+                const completed = isStepCompleted(step);
+                return (
+                  <div key={step} className="flex flex-col items-center flex-1 relative">
+                    <div
+                      className={`w-8 h-8 flex items-center justify-center rounded-full text-white font-bold z-10 ${
+                        completed ? "bg-green-500" : "bg-gray-300"
+                      }`}
+                    >
+                      {index + 1}
+                    </div>
+                    <span className="mt-2 text-sm">{step}</span>
 
-          {/* Table for Items */}
+                    {/* Progress line */}
+                    {index < 2 && (
+                      <div
+                        className={`absolute top-4 left-full w-full h-1 ${
+                          isStepCompleted(["Placed", "Shipped", "Delivered"][index + 1])
+                            ? "bg-green-500"
+                            : "bg-gray-300"
+                        }`}
+                      ></div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Items Table */}
+          <h4 className="mt-6 font-semibold">Items:</h4>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300 mt-2">
               <thead>
@@ -77,14 +118,16 @@ const TrackOrder = () => {
                   <tr key={item.itemId} className="bg-white">
                     <td className="border border-gray-300 px-4 py-2">{item.name}</td>
                     <td className="border border-gray-300 px-4 py-2 text-center">{item.quantity}</td>
-                    <td className="border border-gray-300 px-4 py-2 text-right">₹{item.quantity * item.price}</td>
+                    <td className="border border-gray-300 px-4 py-2 text-right">
+                      ₹{item.quantity * item.price}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          {/* **Total Price Calculation** */}
+          {/* Grand Total */}
           <div className="mt-4 text-lg font-semibold text-right">
             Grand Total: ₹{order.items.reduce((total, item) => total + item.quantity * item.price, 0)}
           </div>

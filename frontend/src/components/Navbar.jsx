@@ -151,7 +151,7 @@ const Navbar = () => {
                 <img src={cartimg} className="h-10" />
                 {
                  totalQuantity > 0 && (
-                    <span className="text-red-500">({totalQuantity})</span>
+                    <span className="text-red-500">✔</span>
                  )
                 }
                 
@@ -306,7 +306,7 @@ const Navbar = () => {
                   className="relative bg-white text-green-700 p-2 rounded-full hover:bg-green-50 transition-colors duration-200"
                 >
                   🛒 {totalQuantity > 0 && (
-                    <span className="text-red-500">({totalQuantity})</span>
+                    <span className="text-red-500">✔</span>
                   )}
                 </motion.button>
 
