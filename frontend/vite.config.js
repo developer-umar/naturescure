@@ -9,7 +9,7 @@ export default defineConfig({
       strict:false
     },
     proxy:{
-      '/api':"http://localhost:5000"
+      '/api':"https://naturescure-n7ie.onrender.com"
     }
   },
   plugins: [react()],

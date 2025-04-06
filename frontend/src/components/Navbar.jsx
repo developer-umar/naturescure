@@ -39,7 +39,7 @@ const Navbar = () => {
     if (user?._id) {
       const fetchTotalQuantity = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/api/cart/${user._id}/totalquantity`);
+          const response = await fetch(`https://naturescure-n7ie.onrender.com/api/cart/${user._id}/totalquantity`);
           const data = await response.json();
 
           if (data.totalQuantity !== totalQuantity) {

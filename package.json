@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node backend/server.js",
-    "build":"npm install && npm install --prefix Frontend && npm run build --prefix Frontend",
-
+    "build": "npm install && npm install --prefix Frontend && npm run build --prefix Frontend",
     "dev": "nodemon backend/server.js"
   },
   "keywords": [],
@@ -16,7 +15,7 @@
     "@google/generative-ai": "^0.22.0",
     "axios": "^1.7.9",
     "bcryptjs": "^3.0.2",
-    "cloudinary": "^2.6.0",
+    "cloudinary": "^1.41.3",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.7",

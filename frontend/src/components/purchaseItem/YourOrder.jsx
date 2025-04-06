@@ -16,7 +16,7 @@ const YourOrder = () => {
 
   const fetchOrders = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/orders/user/${userId}`);
+      const { data } = await axios.get(`https://naturescure-n7ie.onrender.com/api/orders/user/${userId}`);
       setOrders(data);
     } catch {
       setError("Failed to load orders");
