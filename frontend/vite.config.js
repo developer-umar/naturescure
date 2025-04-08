@@ -9,7 +9,7 @@ export default defineConfig({
       strict:false
     },
     proxy:{
-      '/api':"http://localhost:5000"
+      '/api':"https://naturescurezone.onrender.com"
     }
   },
   plugins: [react()],

@@ -22,7 +22,7 @@ const app = express();
 // ✅ Middleware
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:5173", // React ke liye 5173 (Vite) ya 3000
+  origin: "https://naturescurezone.onrender.com", // React ke liye 5173 (Vite) ya 3000
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Added comma here
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
