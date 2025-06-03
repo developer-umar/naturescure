@@ -38,7 +38,7 @@ Have questions, suggestions, or collaboration ideas? Feel free to reach out:
 - 👨‍💻 **Saral Singh** – [Add LinkedIn/GitHub]  
 - 👨‍💻 **Hradyansh Dosar** – [Add LinkedIn/GitHub]
 
-Or connect with the team on GitHub: [github.com/yourusername](https://github.com/yourusername)
+Or connect with the team on GitHub: https://github.com/CodeX-Squad
 
 
 ## 🛠️ Tech Stack
